@@ -139,7 +139,7 @@
             </div>
 
             <div class="flex w-full my-8">
-                <a href="" class="text-white bg-primary text-center uppercase w-full text-sm py-2">Donate now</a>
+                <a href="{{route('billing')}}" class="text-white bg-primary text-center uppercase w-full text-sm py-2">Donate now</a>
             </div>
 
             <div class="border border-slate-400 bg-white">

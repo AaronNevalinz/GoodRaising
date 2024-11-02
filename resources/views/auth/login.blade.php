@@ -10,12 +10,18 @@
                 @csrf
                <div class="flex flex-col gap-2">
                     <label for="" class="uppercase text-sm">Email:</label>
-                    <input type="email" name="email" class="border border-slate-400 py-1 px-2 outline-none">
+                    <input type="email" name="email" value="{{old('email')}}" class="border border-slate-400 py-1 px-2 outline-none">
+                    @error('email')
+                        <p class="text-red-500">{{$message}}</p>
+                    @enderror
                </div>
 
                <div  class="flex flex-col gap-2">
                     <label for="" class="uppercase text-sm">Password:</label>
                     <input type="password" name="password" class="border border-slate-400 py-1 px-2 outline-none">
+                    @error('password')
+                        <p class="text-red-500">{{$message}}</p>
+                    @enderror
                </div>
 
                 <div  class="flex justify-between items-center">

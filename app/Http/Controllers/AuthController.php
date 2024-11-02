@@ -19,12 +19,12 @@ class AuthController extends Controller
 
         $user = User::create($fields);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('org.index');
     }
     //
     public function login(Request $request){
         $fields = $request->validate([
-            'email'=>'required|email',
+            'email'=>'required|email|exists:users',
             'password'=>'required'
         ]);
 
@@ -34,12 +34,13 @@ class AuthController extends Controller
     }
     //
     public function logout(Request $request){
-        Auth::login();
+
+        Auth::logout();
 
         // invalidate the user
-        $request->session->invalidate();
+        $request->session()->invalidate();
         // regenrate csrf token
-        $request->session->regenerateToken();
+        $request->session()->regenerateToken();
         // redirect home
         return redirect()->route('home');
 

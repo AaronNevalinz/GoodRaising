@@ -32,7 +32,7 @@
         <ul class="flex flex-col gap-3 text-sm font-medium">
             <li class="text-primary text-xl font-bold">NonProfits</li>
             <li>
-                <a href="" class="hover:text-primary hover:underline">Start an Application</a>
+                <a href="{{route('application')}}" class="hover:text-primary hover:underline">Start an Application</a>
             </li>
             <li>
                 <a href="" class="hover:text-primary hover:underline">Why Join?</a>

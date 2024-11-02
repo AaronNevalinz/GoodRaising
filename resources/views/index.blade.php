@@ -6,8 +6,8 @@
                 <img class="" src="images/man holding cat.jpg" alt="">
                 <div class="absolute bottom-0 pb-5 pl-8 py-5 mx-auto text-white backdrop-blur-sm bg-slate-500/50 w-full right-0 left-0">
                     <p class="uppercase">united States</p>
-                    <p class="text-2xl font-bold mb-2">Hurricane Milton Relief Fund</p>
-                    <a href="{{route('single-project')}}" class="donate-btn bg-primary w-full text-white mt-3 text-sm font-bold px-8 py-2 uppercase">Donate</a>
+                    <a href="{{route('single-project')}}"><p class="text-2xl font-bold mb-2">Hurricane Milton Relief Fund</p></a>
+                    <a href="{{route('billing')}}" class="donate-btn bg-primary w-full text-white mt-3 text-sm font-bold px-8 py-2 uppercase">Donate</a>
                 </div>
             </div>
             <div class="col-span-1 grid grid-cols-2 gap-0.5">
@@ -15,32 +15,32 @@
                     <img src="images/candles.jpg" alt="">
                     <div class="absolute bottom-0 py-2 pl-8 w-full text-white backdrop-blur-sm bg-slate-500/50">
                         <p class="uppercase text-sm">united States</p>
-                        <p class="text-lg font-medium">Hurricane Milton Relief Fund</p>
-                        <a href="" class="donate-btn bg-primary w-full text-white mt-3 text-xs rounded-md  font-bold px-8 py-2 uppercase">Donate</a>
+                        <a href="{{route('single-project')}}"><p class="text-2xl font-bold mb-2">Hurricane Milton Relief Fund</p></a>
+                        <a href="{{route('billing')}}" class="donate-btn bg-primary w-full text-white mt-3 text-sm font-bold px-8 py-2 uppercase">Donate</a>
                     </div>
                 </div>
                 <div class="relative">
                     <img class="w-full object-cover h-full" src="images/running.jpg" alt="">
                     <div class="absolute bottom-0 py-2 pl-8 w-full text-white backdrop-blur-sm bg-slate-500/50">
                         <p class="uppercase text-sm">united States</p>
-                        <p class="text-lg font-medium">Hurricane Milton Relief Fund</p>
-                        <a href="" class="donate-btn bg-primary w-full text-white mt-3 text-xs rounded-md  font-bold px-8 py-2 uppercase">Donate</a>
+                        <a href="{{route('single-project')}}"><p class="text-2xl font-bold mb-2">Hurricane Milton Relief Fund</p></a>
+                        <a href="{{route('billing')}}" class="donate-btn bg-primary w-full text-white mt-3 text-sm font-bold px-8 py-2 uppercase">Donate</a>
                     </div>
                 </div>
                 <div class="relative">
                     <img src="images/kids.jpg" alt="">
                     <div class="absolute bottom-0 py-2 pl-8 w-full text-white backdrop-blur-sm bg-slate-500/50">
                         <p class="uppercase text-sm">united States</p>
-                        <p class="text-lg font-medium">Hurricane Milton Relief Fund</p>
-                        <a href="" class="donate-btn bg-primary w-full text-white mt-3 text-xs rounded-md  font-bold px-8 py-2 uppercase">Donate</a>
+                        <a href="{{route('single-project')}}"><p class="text-2xl font-bold mb-2">Hurricane Milton Relief Fund</p></a>
+                        <a href="{{route('billing')}}" class="donate-btn bg-primary w-full text-white mt-3 text-sm font-bold px-8 py-2 uppercase">Donate</a>
                     </div>
                 </div>
                 <div class="relative">
                     <img src="images/ecovillage.jpg" alt="">
                     <div class="absolute bottom-0 py-2 pl-8 w-full text-white backdrop-blur-sm bg-slate-500/50">
                         <p class="uppercase text-sm">united States</p>
-                        <p class="text-lg font-medium">Hurricane Milton Relief Fund</p>
-                        <a href="" class="donate-btn bg-primary w-full text-white mt-3 text-xs rounded-md  font-bold px-8 py-2 uppercase">Donate</a>
+                        <a href="{{route('single-project')}}"><p class="text-2xl font-bold mb-2">Hurricane Milton Relief Fund</p></a>
+                        <a href="{{route('billing')}}" class="donate-btn bg-primary w-full text-white mt-3 text-sm font-bold px-8 py-2 uppercase">Donate</a>
                     </div>
                 </div>
             </div>
