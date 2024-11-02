@@ -50,7 +50,3 @@ Contributions are welcome!  Please feel free to submit pull requests or open iss
 ## License
 
 This project is open-sourced software licensed under the [MIT license](LICENSE).
-```
-
-
-This README provides a good overview of the project, its features, and how to get started. It also highlights areas for future development and encourages community contributions. Remember to replace `"https://github.com/your-username/globalgiving-clone.git"` with the actual URL of your repository if you're hosting it publicly. If not, you can omit the "Installation" section's clone step.
