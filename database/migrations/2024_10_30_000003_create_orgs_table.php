@@ -24,9 +24,9 @@ return new class extends Migration
             $table->string('web_url')->nullable();
             $table->string('location_of_operation')->nullable();
             $table->string('themes')->nullable();
-            $table->string('programs');
-            $table->string('mission');
-            $table->string('awards_reg');
+            $table->text('programs');
+            $table->text('mission');
+            $table->text('awards_reg');
             $table->string('religious_affiliation');
             $table->string('director_name');
             $table->string('title');

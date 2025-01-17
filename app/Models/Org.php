@@ -31,10 +31,13 @@ class Org extends Model
     ];
     
     public function user(){
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function projects(){
-        $this->hasMany(Project::class);
+        return $this->hasMany(Project::class);
+    }
+    public function donation(){
+        return $this->hasMany(Donation::class);
     }
 }

@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
-    <section class="h-screen bg-secondary flex w-full items-center justify-center">
+    <section class="h-screen bg-accent flex w-full items-center justify-center">
         <div class="bg-white py-16 w-[450px] px-12">
 
             <h1 class="text-3xl text-slate-600 text-center">Register</h1>

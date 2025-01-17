@@ -19,7 +19,9 @@ class AuthController extends Controller
 
         $user = User::create($fields);
 
-        return redirect()->route('org.index');
+        Auth::login($user);
+
+        return redirect()->route('home');
     }
     //
     public function login(Request $request){
@@ -28,7 +30,13 @@ class AuthController extends Controller
             'password'=>'required'
         ]);
 
+
+
         if(Auth::attempt($fields)){
+            $user = Auth::user();
+            if($user->is_admin){
+                return redirect()->route('admin.index');
+            }
             return redirect()->route('home');
         }
     }

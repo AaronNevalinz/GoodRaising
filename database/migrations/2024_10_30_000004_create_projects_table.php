@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('org_id')->constrained()->cascadeOnDelete();
             $table->string('title');
-            $table->string('desc');
-            $table->string('goal');
+            $table->text('project_summary');
+            $table->string('theme');
+            $table->string('funding_goal');
+            $table->string('cover_img');
+            $table->string('project_location');
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });

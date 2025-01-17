@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donation;
 use App\Models\Org;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -17,9 +18,12 @@ class OrgController extends Controller
         //
         $org_id = Auth::user()->org->id;
         $projects = Project::where('org_id', $org_id)->get();
+        $donations = Donation::where('org_id', $org_id);
+        $totalDonations = $donations->sum('amount');
+        $totalDonors = $donations->count();
         $org = Auth::user()->org;
         // dd($org);
-        return view('dashboard', ['org'=>$org, 'projects'=>$projects]);
+        return view('dashboard', ['org'=>$org, 'projects'=>$projects, 'totalDonations'=>$totalDonations, 'totalDonors'=>$totalDonors]);
     }
 
     /**
@@ -50,7 +54,7 @@ class OrgController extends Controller
         
         Auth::user()->org()->create($fields);
 
-        return redirect()->route('org.index');
+        return redirect()->route('organization');
 
     }
 

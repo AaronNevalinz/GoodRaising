@@ -1,1 +1,1 @@
-<div class="h-[0.5px] bg-slate-600"> </div>
+<div class="h-[0.5px] bg-accent"> </div>

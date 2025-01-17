@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Org;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -17,7 +19,9 @@ class ProjectController extends Controller
         $org_id = Auth::user()->org->id;
 
         $projects = Project::where('org_id', $org_id)->get();
-        return view('project-list', ['projects'=>$projects]);
+        $org = Org::where('id', $org_id)->first();
+        // dd($org);
+        return view('project.project-list', ['projects'=>$projects, 'org'=> $org]);
     }
     
     /**
@@ -26,7 +30,7 @@ class ProjectController extends Controller
     public function create()
     {
         //validate
-        return view('add-project');
+        return view('project.add-project');
 
     }
 
@@ -35,17 +39,31 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        
+
+        // dd('ok');
+
         $org_id = Auth::user()->org->id;
         //validate
         $fields = $request->validate([
             'title'=>'required',
-            'desc'=>'required',
-            'goal'=>'required',
+            'project_location'=>'required',
+            'funding_goal'=>'required',
+            'project_summary'=>'required',
+            'theme'=>'required',
+            'cover_image'=>['required', 'file', 'max:3000', 'mimes:webp,jpg,png,jpeg']
         ]);
-
-        Project::create(["org_id"=>$org_id, ...$fields]);
+        // Store image if it exists
+        if($request->hasFile('cover_image')){
+            $path = Storage::disk('public')->put('project_images', $request->cover_image);
+        }
         
-        return redirect()->route('org.index');
+
+
+        Project::create(["org_id"=>$org_id, "cover_img"=>$path, ...$fields]);
+        
+        return redirect()->route('project.index');
+
 
     }
 
@@ -55,6 +73,21 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         //
+        return view('project.single-project', ['project'=>$project]);
+        // return response()->json([
+        //     'view' => view('project.single-project', ['project' => $project])->render(),
+        //     'project' => $project,
+        // ]);
+        
+    }
+
+    public function billing(Project $project){
+        return view('billing', ['project'=>$project]);
+        // return response()->json([
+        //     'view' => view('billing', ['project' => $project])->render(),
+        //     'project' => $project,
+        // ]);
+        
     }
 
     /**
@@ -63,6 +96,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         //
+        return view('project.edit', ['project'=>$project]);
+        
     }
 
     /**
@@ -70,7 +105,18 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $fields = $request->validate([
+            'title' =>'max:120',
+            'theme'=>'required',
+            'funding_goal' => 'required',
+            'project_summary' => 'required',
+            'cover_image'
+        ]);
+
+        $project->update($fields);
+
+        return redirect()->route('project.index');
+
     }
 
     /**

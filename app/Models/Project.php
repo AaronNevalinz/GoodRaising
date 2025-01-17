@@ -9,14 +9,18 @@ class Project extends Model
     //
     protected $fillable = [
         'title',
-        'goal',
+        'funding_goal',
         'org_id',
-        'desc'
+        'project_summary',
+        'theme',
+        'project_location',
+        'cover_img'
     ];
     public function org(){
-        $this->belongsTo(Org::class);
+        return $this->belongsTo(Org::class);
     }
     public function report(){
-        $this->hasMany(Report::class);
+        return $this->hasMany(Report::class);
     }
+    
 }

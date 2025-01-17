@@ -1,7 +1,7 @@
-<div class="mt-1 flex items-center gap-10 bg-slate-300 px-10 py-3">
+<div class="mt-1 flex items-center gap-10 bg-accent px-10 py-10">
     <!-- Breathing in, I calm body and mind. Breathing out, I smile. - Thich Nhat Hanh -->
     <p class="font-bold ">Explore Projects:</p>
-    <ul class="flex items-center gap-10 text-sm font-medium text-slate-800">
+    <ul class="flex items-center gap-10 font-medium text-textColor">
         <li>
             <a href="" class="hover:underline hover:text-primary">Featured</a>
         </li>

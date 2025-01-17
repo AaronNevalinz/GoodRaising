@@ -10,8 +10,8 @@ class Report extends Model
     protected $fillable = [
         'title',
         'body',
-        'org_id',
-        'user_id',
+        'project_id',
+        'report_image'
     ];
     public function project(){
         $this->belongsTo(Project::class);
