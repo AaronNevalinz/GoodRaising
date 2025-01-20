@@ -20,7 +20,7 @@
                             </th>
                             <th class="p-4 border-b border-slate-200 bg-accent">
                             <p class="text-textColor font-bold leading-none ">
-                                Donor Name
+                                Organization Name
                             </p>
                             </th>
                             <th class="p-4 border-b border-slate-200 bg-accent">

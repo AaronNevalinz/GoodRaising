@@ -7,15 +7,14 @@
             
             
             {{-- table starts here --}}
-            <div class="pt-5 ml-[15rem] min-w-[47rem]">
+            <div class="pt-5 ml-[15rem] flex-1 min-w-[47rem]">
                 <div class="w-2/3">
-                    <h1 class="text-2xl text-white font-montserrat font-bold">Add a New Project Report</h1>
-                    <p class="my-5 text-textColor">
-                        Project reports must contain content specific to the project. While you may mention upcoming events like matching campaigns, reports cannot only contain solicitations for donations. GlobalGiving reserves the right to remove links to donation options other than GlobalGiving contained in yo
-                    </p>
+                    <h1 class="text-2xl text-white font-montserrat font-bold">Edit Project Report</h1>
+                    
 
-                    <form action="/report/create" method="POST">
+                    <form action="{{route('report.update', $report)}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('put')
                         <div class="space-y-4">
                             <div class="flex flex-col gap-3 text-slate-600">
                                 <label for="" class="font-medium uppercase text-secondary">Title: <span class="text-red-500">*</span></label>
@@ -31,7 +30,8 @@
                             
                             <div class="flex flex-col gap-3 text-slate-600">
                                 <label for="" class="font-medium uppercase text-secondary">Project Report</label>
-                                <textarea name="body" value="{{$report->body}}" cols="30" rows="10" class="bg-accent text-textColor outline-none py-3 px-4 rounded-md uppercase w-full"></textarea>
+                              
+                                <x-tiny-m-c-e_editor id="report_body" name="body" :value="$report->body" rows="15" class="w-full" />
                                 <p class="italic text-slate-500 text-sm ">Tell us a story about your work. See what makes a great project report that will get your donors to give again. </p>
                                 @error('body')
                                     <p class="text-red-500">{{$message}}</p>
@@ -50,7 +50,7 @@
                             
                         </div>
                         <div class="flex gap-5 my-5 mb-20">
-                            <button class="border border-secondary rounded-full text-secondary uppercase px-8 py-2 font-medium mt-8">Cancel</button>
+                            <a href="{{route('report.index')}}" class="border border-secondary rounded-full text-secondary uppercase px-8 py-2 font-medium mt-8">Cancel</a>
                             <button type="submit" class="bg-secondary text-white rounded-full uppercase px-8 py-2 font-medium mt-8">
                                 Submit
                             </button>

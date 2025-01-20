@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function(){
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('dashboard', OrgController::class);
 
+
     Route::resource('admin', AdminController::class);
     Route::get('adminorgs', [AdminController::class, 'get_orgs'])->name('admin.get_orgs');
     
@@ -42,5 +43,5 @@ Route::middleware('auth')->group(function(){
     Route::view('application', 'org.application')->name('application');
     Route::post('application', [OrgController::class, 'create']);
     Route::get('donations', [DonationController::class, 'index'])->name('donations');
-    Route::view('organization', 'org')->name('organization');
+    Route::get('organization', [UserDashboardController::class, 'get_org_details'])->name('organization');
 });

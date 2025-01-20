@@ -52,6 +52,11 @@
                                 Amount
                             </p>
                             </th>
+                            <th class="p-4 border-b border-slate-200 bg-accent">
+                            <p class=" leading-none text-textColor font-bold">
+                                Message
+                            </p>
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -70,13 +75,16 @@
                                 <p class="text-sm text-slate-500">{{$donation->phone}}</p>
                                 </td>
                                 <td class="p-4 py-5">
-                                <p class="text-sm text-slate-500">{{$donation->project_title}}</p>
+                                <p class="text-sm text-slate-500">{{Str::limit($donation->project_title, 25)}}</p>
                                 </td>
                                 <td class="p-4 py-5">
                                 <p class="text-sm text-slate-500">{{ $donation->created_at->diffForHumans() }}</p>
                                 </td>
                                 <td class="p-4 py-5">
                                 <p class="text-sm text-slate-500">UGX {{number_format($donation->amount)}}</p>
+                                </td>
+                                <td class="p-4 py-5 text-center">
+                                    <a href="" class="text-flamePea text-sm font-bold underline text-center uppercase">Send</a>
                                 </td>
                             </tr>
                             @endforeach

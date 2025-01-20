@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default defineConfig({
     plugins: [

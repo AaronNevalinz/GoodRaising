@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\DB;
 class UserDashboardController extends Controller
 {
     //
-    public function dashboard(){
+    public function get_org_details(){
         $org = Auth::user()->org;
-        dd($org);
-        // return view('dashboard', ['org'=>$org]);
+        // dd($org);
+        return view('org', ['org'=>$org]);
     }
 }

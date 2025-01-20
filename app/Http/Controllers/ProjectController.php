@@ -39,10 +39,6 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        
-
-        // dd('ok');
-
         $org_id = Auth::user()->org->id;
         //validate
         $fields = $request->validate([
@@ -53,13 +49,12 @@ class ProjectController extends Controller
             'theme'=>'required',
             'cover_image'=>['required', 'file', 'max:3000', 'mimes:webp,jpg,png,jpeg']
         ]);
+        $path = null;
         // Store image if it exists
         if($request->hasFile('cover_image')){
             $path = Storage::disk('public')->put('project_images', $request->cover_image);
         }
         
-
-
         Project::create(["org_id"=>$org_id, "cover_img"=>$path, ...$fields]);
         
         return redirect()->route('project.index');

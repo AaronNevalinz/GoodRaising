@@ -1,9 +1,10 @@
 @extends('layout.layout')
 @section('content')
     <section class="">
+
         <form action="{{route('donate', $project)}}" method="post">
             @csrf
-        <div class="max-w-5xl mx-auto grid grid-cols-3 py-16 gap-10">
+             <div class="max-w-5xl mx-auto grid grid-cols-3 py-16 gap-10">
             <div class="col-span-1">
                <div class="">
                     <div class="w-full h-48">
@@ -63,11 +64,12 @@
                        </div>
 
                         <button type="submit" class="text-center bg-secondary text-white py-2 w-full text-lg uppercase font-medium mt-2">Submit</button>
-                    </form>
+                    
                 </div>
             </div>
 
         </div>
+    </form>
 
         <x-horizontal-line />
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewUserRegistered;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,9 @@ class AuthController extends Controller
         ]);
 
         $user = User::create($fields);
+
+        event(new NewUserRegistered($user));
+
 
         Auth::login($user);
 

@@ -11,12 +11,12 @@
                 <div class=" border border-secondary px-8 py-4 rounded-lg mb-10">
                     <h3 class="text-white font-montserrat font-bold text-2xl">Organization Basic Information</h3>
                     <div class="text-textColor mt-4 flex flex-wrap items-center gap-x-10 gap-y-4 ">
-                        <p>Name: <span class="text-white font-bold">Kole Intellectual Forum</span></p>
-                        <p>Address: <span class="text-white font-bold">TeOkole</span></p>
-                        <p>City: <span class="text-white font-bold">Lira</span></p>
-                        <p>State: <span class="text-white font-bold">Kole</span></p>
-                        <p>Postal Code: <span class="text-white font-bold">0000</span></p>
-                        <p>Location: <span class="text-white font-bold">Northern Uganda</span></p>
+                        <p>Name: <span class="text-white font-bold">{{$org->name}}</span></p>
+                        <p>Address: <span class="text-white font-bold">{{$org->address}}</span></p>
+                        <p>City: <span class="text-white font-bold">{{$org->city}}</span></p>
+                        <p>State: <span class="text-white font-bold">{{$org->state}}</span></p>
+                        <p>Postal Code: <span class="text-white font-bold">{{$org->postal_code}}</span></p>
+                        <p>Location: <span class="text-white font-bold">{{$org->location}}</span></p>
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@
                            
                             <div class="text-textColor bg-accent px-4 py-1.5 rounded-md mt-2">
                                 <p class="">
-                                    Kole Intellectual Forum is promoting quality education, empowering a girl child and youth to fight for her rights in Uganda; through, community Integration program, Home Economics, and Vocational training
+                                    {{$org->programs}}
                                 </p>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             <p class="text-white font-bold">Mission:</p>
                             <div class="text-textColor bg-accent px-4 py-1.5 rounded-md mt-2">
                                 <p>
-                                    To promote quality, sustainable and potential education in Uganda; through, action research, modern telecommunication system and entrepreneurship skills.
+                                    {{$org->mission}}
                                 </p>
                             </div>
                         </div>
@@ -47,10 +47,7 @@
                             <p class="text-white font-bold">Awards and Recognition:</p>
                             <div class="text-textColor bg-accent px-4 py-1.5 rounded-md mt-2">
                                 <p>
-                                    Community support
-                                    local government recognition
-                                    Supperstar: GlobalGiving
-                                    Twaweza East Africa: Kole District Partner Organization
+                                    {{$org->awards_reg}}
                                 </p>
                             </div>
                         </div>
